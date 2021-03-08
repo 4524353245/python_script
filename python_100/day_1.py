@@ -27,3 +27,26 @@ for x in range(0,20):
     z = 100 - x -y
     if 5*x + 3*y + z/3 == 100:
       print("公鸡{}只，母鸡{}只，小鸡{}只".format(x,y,z))
+
+
+def foo():
+  a = 100
+  def bar():
+    nonlocal a # 使用nonlocal对嵌套域的变量值进行修改
+    a = 200
+  bar()
+  print(a)
+if __name__ == "__main__":
+  foo()
+
+
+import os
+import time
+content = '北京欢迎你为你开天辟地…………'
+while True:
+  # 清理屏幕上的输出
+  os.system('cls')  # os.system('clear')
+  print(content)
+  # 休眠200毫秒
+  time.sleep(0.2)
+  content = content[1:] + content[0]
